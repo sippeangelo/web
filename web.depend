@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1321446301 source:/home/imon/cpp/web/main.cpp
+	<iostream>
+	<boost/asio.hpp>
+	<boost/array.hpp>
+	<boost/algorithm/string.hpp>
+
