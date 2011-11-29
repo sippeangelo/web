@@ -1,7 +1,34 @@
 # depslib dependency file v1.0
-1321446301 source:/home/imon/cpp/web/main.cpp
+1322573939 source:/home/imon/cpp/web/main.cpp
 	<iostream>
+	<string>
+	<sstream>
 	<boost/asio.hpp>
 	<boost/array.hpp>
 	<boost/algorithm/string.hpp>
+	<boost/algorithm/string/predicate.hpp>
+	<boost/algorithm/string/regex.hpp>
+	<boost/regex.hpp>
+	<boost/filesystem.hpp>
+	<boost/filesystem/fstream.hpp>
+	<unistd.h>
+	"resources.h"
+	"mime.h"
+
+1322573325 source:/home/imon/cpp/web/mimetypes.txt
+
+1322564946 source:/home/imon/cpp/web/404.html
+
+1322574478 /home/imon/cpp/web/resources.h
+	<string>
+
+1322574191 source:/home/imon/cpp/web/mime.cpp
+	"mime.h"
+
+1322573057 /home/imon/cpp/web/mime.h
+	<map>
+	<boost/algorithm/string.hpp>
+	<boost/algorithm/string/regex.hpp>
+	<boost/filesystem.hpp>
+	"resources.h"
 
