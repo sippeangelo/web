@@ -52,9 +52,13 @@ std::map<std::string, std::string> ParseHeaders(std::vector<std::string>* vsHead
 
 int main(int argc, char **argv)
 {
-	//std::cout << GetMimeType(boost::filesystem::path("lol.ice")) << std::endl;
-
-	//return 0;
+	int bind_port = 1024;
+	
+	if (geteuid() != 0)
+	{
+		std::cout << "Needs to be run as root" << std::endl;
+		return 1;	
+	}
 	
 	// Chroot to working directory
 	chroot(".");
@@ -62,8 +66,8 @@ int main(int argc, char **argv)
     try
     {
 		boost::asio::io_service io_service;
-		tcp::acceptor acceptor(io_service, tcp::endpoint(tcp::v4(), 80));
-
+		tcp::acceptor acceptor(io_service, tcp::endpoint(tcp::v4(), bind_port));
+		
 		for (;;)
 		{
 			tcp::socket socket(io_service);
