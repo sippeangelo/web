@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1322573939 source:/home/imon/cpp/web/main.cpp
+1322661013 source:/home/imon/cpp/web/main.cpp
 	<iostream>
 	<string>
 	<sstream>
@@ -14,6 +14,8 @@
 	<unistd.h>
 	"resources.h"
 	"mime.h"
+	"header.h"
+	"request.h"
 
 1322573325 source:/home/imon/cpp/web/mimetypes.txt
 
@@ -31,4 +33,9 @@
 	<boost/algorithm/string/regex.hpp>
 	<boost/filesystem.hpp>
 	"resources.h"
+
+1322658989 /home/imon/cpp/web/header.h
+
+1322661137 /home/imon/cpp/web/request.h
+	"header.h"
 

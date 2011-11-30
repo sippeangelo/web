@@ -15,19 +15,13 @@
 
 #include "resources.h"
 #include "mime.h"
+#include "header.h"
+#include "request.h"
 
 using boost::asio::ip::tcp;
 
-struct header
-{
-    std::string name;
-    std::string value;
-};
-
 std::map<std::string, std::string> ParseHeaders(std::vector<std::string>* vsHeaders)
 {
-	std::vector<header> vhHeaders;
-
 	std::map<std::string, std::string> mHeaders;
 
     for (auto it = vsHeaders->begin(); it != vsHeaders->end(); it++)
@@ -37,11 +31,11 @@ std::map<std::string, std::string> ParseHeaders(std::vector<std::string>* vsHead
 
         if (match)
         {
-            header h;
+            /*header h;
             h.name = m[1];
             h.value = m[2];
 
-            vhHeaders.push_back(h);
+            vhHeaders.push_back(h);*/
 
             mHeaders[m[1]] = m[2];
         }
@@ -52,7 +46,28 @@ std::map<std::string, std::string> ParseHeaders(std::vector<std::string>* vsHead
 
 int main(int argc, char **argv)
 {
-	int bind_port = 1024;
+	/*pid_t pID = fork();
+	
+	std::cout << "PID: " << pID << std::endl;
+	
+	if (pID == 0)
+	{
+		std::cout << "Lol fork" << std::endl;
+	}
+	else if (pID < 0)
+	{
+		std::cerr << "Failed to fork D:" << std::endl;
+		exit(1);	
+	}
+	else
+	{
+		std::cout << "Yey we did the fork!" << std::endl;
+	}
+	
+	std::cin.get();
+	return 0;*/
+	
+	int bind_port = 80;
 	
 	if (geteuid() != 0)
 	{
@@ -78,7 +93,23 @@ int main(int argc, char **argv)
 
             std::vector<std::string> headers;
 
-            try
+			try
+			{
+				boost::array<char, 2048> buf;
+				size_t len = socket.read_some(boost::asio::buffer(buf));
+                std::string data = std::string(buf.data(), len);
+                
+                http::Request* request = new http::Request(data);
+                
+                std::cout << request->GetStartLine().Resource << std::endl;
+                std::cout << request->GetHeader("Host") << std::endl;
+			}
+			catch (std::exception &e)
+            {
+                std::cerr << e.what() << std::endl;
+            }
+
+            /*try
             {
                 boost::array<char, 2048> buf;
                 size_t len = socket.read_some(boost::asio::buffer(buf));
@@ -175,7 +206,8 @@ int main(int argc, char **argv)
 					std::cout << "___ RESPONSE ___" << std::endl << ss.str() << std::endl;
 					boost::asio::write(socket, boost::asio::buffer(response), boost::asio::transfer_all());
 				}
-            }
+				
+            }*/
 
             std::cout << "Disconnected: " << endpoint.address() << std::endl;
 
