@@ -26,7 +26,7 @@ public:
 	Request(std::string raw);
   	~Request() {}
   	
-  	std::string GetHeader(std::string name);
+  	std::string GetHeader(std::string header);
   	std::map<std::string, std::string>* GetHeaders();
   	StartLine* GetStartLine();
   	

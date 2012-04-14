@@ -6,12 +6,6 @@
 namespace http
 {
 
-/*struct header
-{
-    std::string name;
-    std::string value;
-};*/
-
 // Creates a map of the headers in a raw HTTP request
 static std::map<std::string, std::string> ParseHeaders(std::vector<std::string>* vsHeaders)
 {

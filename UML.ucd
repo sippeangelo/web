@@ -1,0 +1,569 @@
+<?xml version="1.0" standalone="yes" ?>
+<diagram>
+    <title>Untitled</title>
+    <DiagramType>Class Diagram</DiagramType>
+    <Version>3.2</Version>
+    <valuesFileName />
+    <elements num="7">
+        <element>
+            <type>UMLCLASS</type>
+            <description />
+            <bgrColor R="128" G="255" B="128" />
+            <fgrColor R="0" G="0" B="0" />
+            <objId>4</objId>
+            <ptul X="911" Y="263" />
+            <ptdr X="1054" Y="342" />
+            <links num="1">
+                <link id="10" />
+            </links>
+            <name>http::StartLine</name>
+            <stereotype />
+            <constraint />
+            <showAttributes />
+            <showMethods />
+            <attributes num="3">
+                <attribute>
+                    <name>Method</name>
+                    <stereotype />
+                    <constraint />
+                    <type>std::string</type>
+                    <defValue />
+                    <vis>Public</vis>
+                    <description />
+                </attribute>
+                <attribute>
+                    <name>Resource</name>
+                    <stereotype />
+                    <constraint />
+                    <type>std::string</type>
+                    <defValue />
+                    <vis>Public</vis>
+                    <description />
+                </attribute>
+                <attribute>
+                    <name>Version</name>
+                    <stereotype />
+                    <constraint />
+                    <type>std::string</type>
+                    <defValue />
+                    <vis>Public</vis>
+                    <description />
+                </attribute>
+            </attributes>
+            <operations num="0" />
+        </element>
+        <element>
+            <type>UMLASS</type>
+            <description />
+            <bgrColor R="255" G="255" B="255" />
+            <fgrColor R="0" G="0" B="0" />
+            <objId>15</objId>
+            <points num="2">
+                <pt x="542" y="308" />
+                <pt x="391" y="387" />
+            </points>
+            <objStart id="1" />
+            <objEnd id="0" />
+            <stereotype />
+            <constraint />
+            <roleA mult="" />
+            <roleB mult="">
+                <navigable />
+            </roleB>
+        </element>
+        <element>
+            <type>UMLAGG</type>
+            <description />
+            <bgrColor R="255" G="255" B="255" />
+            <fgrColor R="0" G="0" B="0" />
+            <objId>10</objId>
+            <points num="2">
+                <pt x="841" y="309" />
+                <pt x="911" y="309" />
+            </points>
+            <objStart id="1" />
+            <objEnd id="4" />
+            <stereotype />
+            <constraint />
+            <roleA mult="" />
+            <roleB mult="1" />
+            <composition />
+        </element>
+        <element>
+            <type>UMLCLASS</type>
+            <description />
+            <bgrColor R="128" G="255" B="128" />
+            <fgrColor R="0" G="0" B="0" />
+            <objId>2</objId>
+            <ptul X="522" Y="435" />
+            <ptdr X="866" Y="727" />
+            <links num="1">
+                <link id="14" />
+            </links>
+            <name>http::Response</name>
+            <stereotype />
+            <constraint />
+            <showAttributes />
+            <showMethods />
+            <attributes num="5">
+                <attribute>
+                    <name>m_HTTPVersion</name>
+                    <stereotype />
+                    <constraint />
+                    <type>std::string</type>
+                    <defValue />
+                    <vis>Private</vis>
+                    <description />
+                </attribute>
+                <attribute>
+                    <name>m_StatusCode</name>
+                    <stereotype />
+                    <constraint />
+                    <type>int</type>
+                    <defValue />
+                    <vis>Private</vis>
+                    <description />
+                </attribute>
+                <attribute>
+                    <name>m_StatusString</name>
+                    <stereotype />
+                    <constraint />
+                    <type>std::string</type>
+                    <defValue />
+                    <vis>Private</vis>
+                    <description />
+                </attribute>
+                <attribute>
+                    <name>m_Headers</name>
+                    <stereotype />
+                    <constraint />
+                    <type>std::map&lt;std::string, std::string&gt;</type>
+                    <defValue />
+                    <vis>Private</vis>
+                    <description />
+                </attribute>
+                <attribute>
+                    <name>m_Content</name>
+                    <stereotype />
+                    <constraint />
+                    <type>std::string*</type>
+                    <defValue />
+                    <vis>Private</vis>
+                    <description />
+                </attribute>
+            </attributes>
+            <operations num="11">
+                <operation>
+                    <name>Response</name>
+                    <stereotype />
+                    <constraint />
+                    <type />
+                    <vis>Public</vis>
+                    <showP />
+                    <showPT />
+                    <description />
+                    <params num="0" />
+                </operation>
+                <operation>
+                    <name>Response</name>
+                    <stereotype />
+                    <constraint />
+                    <type />
+                    <vis>Public</vis>
+                    <showP />
+                    <showPT />
+                    <description />
+                    <params num="2">
+                        <param>
+                            <name>HTTPVersion</name>
+                            <type>std::string</type>
+                            <defValue />
+                        </param>
+                        <param>
+                            <name>StatusCode</name>
+                            <type>int</type>
+                            <defValue />
+                        </param>
+                    </params>
+                </operation>
+                <operation>
+                    <name>GetVersion</name>
+                    <stereotype />
+                    <constraint />
+                    <type>std::string</type>
+                    <vis>Public</vis>
+                    <showP />
+                    <showPT />
+                    <description />
+                    <params num="0" />
+                </operation>
+                <operation>
+                    <name>GetStatusCode</name>
+                    <stereotype />
+                    <constraint />
+                    <type>int</type>
+                    <vis>Public</vis>
+                    <showP />
+                    <showPT />
+                    <description />
+                    <params num="0" />
+                </operation>
+                <operation>
+                    <name>GetStatusString</name>
+                    <stereotype />
+                    <constraint />
+                    <type>std::string</type>
+                    <vis>Public</vis>
+                    <showP />
+                    <showPT />
+                    <description />
+                    <params num="0" />
+                </operation>
+                <operation>
+                    <name>SetHeaders</name>
+                    <stereotype />
+                    <constraint />
+                    <type />
+                    <vis>Public</vis>
+                    <showP />
+                    <showPT />
+                    <description />
+                    <params num="1">
+                        <param>
+                            <name>headers</name>
+                            <type>std::map&lt;std::string, std::string&gt;*</type>
+                            <defValue />
+                        </param>
+                    </params>
+                </operation>
+                <operation>
+                    <name>GetHeaders</name>
+                    <stereotype />
+                    <constraint />
+                    <type>std::map&lt;std::string, std::string&gt;*</type>
+                    <vis>Public</vis>
+                    <showP />
+                    <showPT />
+                    <description />
+                    <params num="0" />
+                </operation>
+                <operation>
+                    <name>SetHeader</name>
+                    <stereotype />
+                    <constraint />
+                    <type />
+                    <vis>Public</vis>
+                    <showP />
+                    <showPT />
+                    <description />
+                    <params num="2">
+                        <param>
+                            <name>header</name>
+                            <type>std::string</type>
+                            <defValue />
+                        </param>
+                        <param>
+                            <name>value</name>
+                            <type>std::string</type>
+                            <defValue />
+                        </param>
+                    </params>
+                </operation>
+                <operation>
+                    <name>DeleteHeader</name>
+                    <stereotype />
+                    <constraint />
+                    <type />
+                    <vis>Public</vis>
+                    <showP />
+                    <showPT />
+                    <description />
+                    <params num="1">
+                        <param>
+                            <name>header</name>
+                            <type>std::string</type>
+                            <defValue />
+                        </param>
+                    </params>
+                </operation>
+                <operation>
+                    <name>SetContent</name>
+                    <stereotype />
+                    <constraint />
+                    <type />
+                    <vis>Public</vis>
+                    <showP />
+                    <showPT />
+                    <description />
+                    <params num="1">
+                        <param>
+                            <name>content</name>
+                            <type>std::string*</type>
+                            <defValue />
+                        </param>
+                    </params>
+                </operation>
+                <operation>
+                    <name>GetContent</name>
+                    <stereotype />
+                    <constraint />
+                    <type>std::string*</type>
+                    <vis>Public</vis>
+                    <showP />
+                    <showPT />
+                    <description />
+                    <params num="0" />
+                </operation>
+            </operations>
+        </element>
+        <element>
+            <type>UMLCLASS</type>
+            <description />
+            <bgrColor R="128" G="255" B="128" />
+            <fgrColor R="0" G="0" B="0" />
+            <objId>0</objId>
+            <ptul X="163" Y="317" />
+            <ptdr X="391" Y="513" />
+            <links num="2">
+                <link id="14" />
+                <link id="15" />
+            </links>
+            <name>http::Server</name>
+            <stereotype />
+            <constraint />
+            <showAttributes />
+            <showMethods />
+            <attributes num="5">
+                <attribute>
+                    <name>m_Port</name>
+                    <stereotype />
+                    <constraint />
+                    <type>int</type>
+                    <defValue />
+                    <vis>Private</vis>
+                    <description />
+                </attribute>
+                <attribute>
+                    <name>m_IOService</name>
+                    <stereotype />
+                    <constraint />
+                    <type>boost::asio::io_service</type>
+                    <defValue />
+                    <vis>Private</vis>
+                    <description />
+                </attribute>
+                <attribute>
+                    <name>m_Acceptor</name>
+                    <stereotype />
+                    <constraint />
+                    <type>tcp::acceptor*</type>
+                    <defValue />
+                    <vis>Private</vis>
+                    <description />
+                </attribute>
+                <attribute>
+                    <name>m_Socket</name>
+                    <stereotype />
+                    <constraint />
+                    <type>tcp::socket*</type>
+                    <defValue />
+                    <vis>Private</vis>
+                    <description />
+                </attribute>
+                <attribute>
+                    <name>m_Endpoint</name>
+                    <stereotype />
+                    <constraint />
+                    <type>tcp::endpoint</type>
+                    <defValue />
+                    <vis>Private</vis>
+                    <description />
+                </attribute>
+            </attributes>
+            <operations num="5">
+                <operation>
+                    <name>Server</name>
+                    <stereotype />
+                    <constraint />
+                    <type />
+                    <vis>Public</vis>
+                    <showP />
+                    <showPT />
+                    <description />
+                    <params num="0" />
+                </operation>
+                <operation>
+                    <name>Server</name>
+                    <stereotype />
+                    <constraint />
+                    <type />
+                    <vis>Public</vis>
+                    <showP />
+                    <showPT />
+                    <description />
+                    <params num="1">
+                        <param>
+                            <name>port</name>
+                            <type>int</type>
+                            <defValue />
+                        </param>
+                    </params>
+                </operation>
+                <operation>
+                    <name>Bind</name>
+                    <stereotype />
+                    <constraint />
+                    <type />
+                    <vis>Public</vis>
+                    <showP />
+                    <showPT />
+                    <description />
+                    <params num="1">
+                        <param>
+                            <name>port</name>
+                            <type>int</type>
+                            <defValue />
+                        </param>
+                    </params>
+                </operation>
+                <operation>
+                    <name>Recieve</name>
+                    <stereotype />
+                    <constraint />
+                    <type>http::Request*</type>
+                    <vis>Public</vis>
+                    <showP />
+                    <showPT />
+                    <description />
+                    <params num="0" />
+                </operation>
+                <operation>
+                    <name>Send</name>
+                    <stereotype />
+                    <constraint />
+                    <type />
+                    <vis>Public</vis>
+                    <showP />
+                    <showPT />
+                    <description />
+                    <params num="1">
+                        <param>
+                            <name>response</name>
+                            <type>http::Response*</type>
+                            <defValue />
+                        </param>
+                    </params>
+                </operation>
+            </operations>
+        </element>
+        <element>
+            <type>UMLASS</type>
+            <description />
+            <bgrColor R="255" G="255" B="255" />
+            <fgrColor R="0" G="0" B="0" />
+            <objId>14</objId>
+            <points num="2">
+                <pt x="522" y="573" />
+                <pt x="391" y="466" />
+            </points>
+            <objStart id="2" />
+            <objEnd id="0" />
+            <stereotype />
+            <constraint />
+            <roleA mult="">
+                <navigable />
+            </roleA>
+            <roleB mult="" />
+        </element>
+        <element>
+            <type>UMLCLASS</type>
+            <description />
+            <bgrColor R="128" G="255" B="128" />
+            <fgrColor R="0" G="0" B="0" />
+            <objId>1</objId>
+            <ptul X="542" Y="239" />
+            <ptdr X="841" Y="371" />
+            <links num="2">
+                <link id="10" />
+                <link id="15" />
+            </links>
+            <name>http::Request</name>
+            <stereotype />
+            <constraint />
+            <showAttributes />
+            <showMethods />
+            <attributes num="2">
+                <attribute>
+                    <name>m_StartLine</name>
+                    <stereotype />
+                    <constraint />
+                    <type>http::StartLine</type>
+                    <defValue />
+                    <vis>Private</vis>
+                    <description />
+                </attribute>
+                <attribute>
+                    <name>m_Headers</name>
+                    <stereotype />
+                    <constraint />
+                    <type>std::map&lt;std::string, std::string&gt;</type>
+                    <defValue />
+                    <vis>Private</vis>
+                    <description />
+                </attribute>
+            </attributes>
+            <operations num="4">
+                <operation>
+                    <name>Request</name>
+                    <stereotype />
+                    <constraint />
+                    <type />
+                    <vis>Public</vis>
+                    <showP />
+                    <showPT />
+                    <description />
+                    <params num="0" />
+                </operation>
+                <operation>
+                    <name>GetHeader</name>
+                    <stereotype />
+                    <constraint />
+                    <type>std::string</type>
+                    <vis>Public</vis>
+                    <showP />
+                    <showPT />
+                    <description />
+                    <params num="1">
+                        <param>
+                            <name>header</name>
+                            <type>std::string</type>
+                            <defValue />
+                        </param>
+                    </params>
+                </operation>
+                <operation>
+                    <name>GetHeaders</name>
+                    <stereotype />
+                    <constraint />
+                    <type>std::map&lt;std::string, std::string&gt;*</type>
+                    <vis>Public</vis>
+                    <showP />
+                    <showPT />
+                    <description />
+                    <params num="0" />
+                </operation>
+                <operation>
+                    <name>GetStartLine</name>
+                    <stereotype />
+                    <constraint />
+                    <type>http::StartLine*</type>
+                    <vis>Public</vis>
+                    <showP />
+                    <showPT />
+                    <description />
+                    <params num="0" />
+                </operation>
+            </operations>
+        </element>
+    </elements>
+</diagram>

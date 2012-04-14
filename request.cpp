@@ -28,9 +28,9 @@ Request::Request(std::string raw)
 	}
 }
 
-std::string Request::GetHeader(std::string name)
+std::string Request::GetHeader(std::string header)
 {
-	auto it = m_Headers.find(name);
+	auto it = m_Headers.find(header);
 	
 	if (it != m_Headers.end())
 		return it->second;
