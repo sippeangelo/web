@@ -29,13 +29,13 @@ void LoadMimeTypes()
 	
 	std::vector<std::string> mimetypes;
 	// Split into rows
-    boost::split_regex(mimetypes, resource, boost::regex("\\n"));
+    boost::split_regex(mimetypes, resource, boost::regex("\\R"));
     
     // Fill the MIME_TYPES map
     for (auto it = mimetypes.begin(); it != mimetypes.end(); it++)
     {
     	boost::smatch m;
-        bool match = boost::regex_match(*it, m, boost::regex("(.*)\\t(.*)"));
+        bool match = boost::regex_match(*it, m, boost::regex("(.*) (.*)"));
         if (match)
     		MIME_TYPES[m[1]] = m[2];	
     }

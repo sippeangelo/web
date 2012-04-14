@@ -1,6 +1,8 @@
 #ifndef HEADER_H_INCLUDED
 #define HEADER_H_INCLUDED
 
+#include <boost/regex.hpp>
+
 namespace http
 {
 
@@ -10,7 +12,8 @@ namespace http
     std::string value;
 };*/
 
-std::map<std::string, std::string> ParseHeaders(std::vector<std::string>* vsHeaders)
+// Creates a map of the headers in a raw HTTP request
+static std::map<std::string, std::string> ParseHeaders(std::vector<std::string>* vsHeaders)
 {
 	std::map<std::string, std::string> mHeaders;
 
@@ -20,15 +23,7 @@ std::map<std::string, std::string> ParseHeaders(std::vector<std::string>* vsHead
         bool match = boost::regex_match(*it, m, boost::regex("(.*): (.*)"));
 
         if (match)
-        {
-            /*header h;
-            h.name = m[1];
-            h.value = m[2];
-
-            vhHeaders.push_back(h);*/
-
             mHeaders[m[1]] = m[2];
-        }
 	}
 
 	return mHeaders;
