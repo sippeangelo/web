@@ -26,9 +26,37 @@ using boost::asio::ip::tcp;
 
 int main(int argc, char **argv)
 {
+	int bind_port = 8080;
+
+	if (argc > 1)
+	{
+		bind_port = atoi(argv[1]);
+		
+		if (bind_port < 0 || bind_port > 49151)
+		{
+			std::cerr << "Port number out of range" << std::endl;
+			return EXIT_FAILURE;
+		}		
+	}
+
+	if (geteuid() != 0 && bind_port < 1024)
+	{
+			std::cerr << "Needs to be run as root to bind ports below 1024" << std::endl;
+			return EXIT_FAILURE;
+	}
+
+	
 	// Create a server object and bind to port 8080
 	http::Server* srv = new http::Server();
-	srv->Bind(8080);
+	try 
+	{
+		srv->Bind(bind_port);
+	}
+	catch (std::exception& e)
+	{
+		std::cerr << "Failed to bind to port " << bind_port << ": " << e.what() << std::endl;
+		return EXIT_FAILURE;	
+	}
 
 	// There's still no way to escape this loop
 	while (true)
@@ -193,5 +221,5 @@ int main(int argc, char **argv)
 
 	delete srv;
 
-	return 0;
+	return EXIT_SUCCESS;
 }
